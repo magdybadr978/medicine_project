@@ -11,10 +11,7 @@ const initApp = (app, express) => {
     app.use(express.json({}))
     //Setup API Routing 
     app.use(`/auth`, authRouter)
-    app.use(`/user`, userRouter)
-    app.use(`/reviews`, reviewsRouter)
-    app.use(`/order`, orderRouter)
-  
+    
 
     app.all('*', (req, res, next) => {
         res.send("In-valid Routing Plz check url  or  method")
