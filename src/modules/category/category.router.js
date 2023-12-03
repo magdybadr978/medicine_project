@@ -1,14 +1,14 @@
 import { Router } from "express";
-const router = Router()
+import * as categoryController from "./controller/medicine.js";
+const router = Router();
 
+//======================== create new categry ========================
+router.post("/createCategore", admin, categoryController.createCategore);
 
+//======================== UPDATA CATEGORY ========================
+router.patch("/updataCategory/:id", admin, categoryController.updateCategory);
 
+//======================== DELET CATEGORY ========================
+router.delete("/deleteCategory/:id", admin, categoryController.deleteCategory);
 
-router.get('/', (req ,res)=>{
-    res.status(200).json({message:"reviews Module"})
-})
-
-
-
-
-export default router
+export default router;
