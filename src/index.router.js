@@ -1,8 +1,5 @@
 import connectDB from '../DB/connection.js'
 import authRouter from './modules/auth/auth.router.js'
-import orderRouter from './modules/order/order.router.js'
-import reviewsRouter from './modules/reviews/reviews.router.js'
-import userRouter from './modules/user/user.router.js'
 import { globalErrorHandling } from './utils/errorHandling.js'
 
 
