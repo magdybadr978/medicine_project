@@ -1,3 +1,4 @@
+import router from "../category/category.router.js";
 import * as medicineController from "./controller/medicine.js";
 //======================== Create Medicine ========================
 router.post(
@@ -17,3 +18,5 @@ router.put(
 );
 //======================== Delete Medicine ========================
 router.delete("/deleteMedicine/:id", admin, medicineController.deleteMedicine);
+
+export default router;

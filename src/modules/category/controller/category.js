@@ -12,11 +12,11 @@ export const createCategore = async (req, res) => {
 		}
 
 		// prepare category object
-		const categoryObj = new Category(); //(req.body.name, req.body.description);
 		if (!req.body.name || !req.body.description)
 			return res.status(500).json({
 				errors: [{ msg: "feilds cann't be empty" }],
 			});
+		const categoryObj = {};
 		categoryObj.name = req.body.name;
 		categoryObj.description = req.body.description;
 
@@ -40,7 +40,7 @@ export const updateCategory = async (req, res) => {
 			return res.status(400).json({ errors: [{ msg: "catrgory not found" }] });
 		}
 
-		const categoryObj = new Category();
+		const categoryObj = {}
 		Object.assign(categoryObj, data[0]);
 		// if(req.file){}
 		if (req.body.name) {
@@ -65,7 +65,7 @@ export const updateCategory = async (req, res) => {
 	}
 };
 // delete category
-export const deleteCategory=async (req, res) => {
+export const deleteCategory = async (req, res) => {
 	try {
 		// ========= 1-Check is this category is exits
 		const data = await query(
@@ -86,4 +86,4 @@ export const deleteCategory=async (req, res) => {
 			errors: [{ msg: "something error" }],
 		});
 	}
-}
+};

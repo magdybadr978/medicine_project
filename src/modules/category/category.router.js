@@ -1,5 +1,5 @@
 import { Router } from "express";
-import * as categoryController from "./controller/medicine.js";
+import * as categoryController from "./controller/category.js";
 const router = Router();
 
 //======================== create new categry ========================
